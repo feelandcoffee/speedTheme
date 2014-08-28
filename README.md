@@ -5,7 +5,7 @@ speedTheme
 
 Status: Pre-Alpha (Aka Don't touch this thing; Still in basic development)
 
-Licence: MIT
+Licence: MIT (for the moment)
 
 
 ### Guidelines
@@ -13,16 +13,42 @@ Licence: MIT
 
 What is in what Folder:
 
+* /dev/ = pre-compiled stylus and javascript
 * /includes/ = php files non standar to wordpress
 * /res/ = production static resources like CSS and JS
 
 #### Code style:
 
-Use for exemple:
+Style identation:
 
-    if($whathevah==true){
+    <?php
+
+    if($whathevah==5){
         doStuff();
     }
+    else{
+        $whathevah = 3;
+
+        if($whathevah == programIsUsless()){
+            moreStuff();
+        }
+    }
+
+    ?>
+
+HTML/PHP independent indent from each other in mix situations
+
+    <table>
+    <?php foreach ($rows as $row): ?>
+        <tr>
+        <?php if ($row->foo()): ?>
+            <?php echo $row ?>
+        <?php else: ?>
+            Something else
+        <?php endif ?>
+        </tr>
+    <?php endforeach ?>
+    </table>
 
 **CSS and Stylus** propieties should be in alphabetical order
 
